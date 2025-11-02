@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow: auto;
+  overflow: hidden;
 }
 
 a {
@@ -226,3 +226,4 @@ button.elders:hover {
   button { font-size: 0.95rem; padding: 10px 15px; }
 
 }
+
