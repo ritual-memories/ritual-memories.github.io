@@ -9,7 +9,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100dvh;
-  overflow: hidden;
 }
 
 a {
@@ -42,7 +41,6 @@ a:visited {
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 15px;
-  overflow: hidden;
 }
 
 #dialogue-container.normal {
@@ -69,6 +67,7 @@ a:visited {
   color: #999fd9; /* default dialogue color */
   font-style: italic;
   text-align: left;
+  overflow-y: auto;           /* Enables vertical scrolling */
 }
 
 /* Character-specific text colors */
@@ -226,6 +225,7 @@ button.elders:hover {
   button { font-size: 0.95rem; padding: 10px 15px; }
 
 }
+
 
 
 
