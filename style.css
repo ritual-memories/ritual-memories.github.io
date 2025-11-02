@@ -1,0 +1,227 @@
+/* === Base Styles === */
+body {
+  background-color: #0b0b0b;
+  color: #d9d9d9;
+  font-family: "Courier New", monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+a {
+    color:#b2b2b2
+}
+
+a:hover {
+    color:#6c82b4
+}
+
+a:visited {
+    color: #b2b2b2
+}
+
+#game-container {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  background: rgba(10, 10, 10, 0.75);
+  border: 1px solid #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(80, 0, 150, 0.3);
+  position: relative;
+}
+
+/* === Dialogue Container === */
+#dialogue-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#dialogue-container.normal {
+  background: transparent;
+  padding: 0;
+}
+
+#game-container .dialogue-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#game-container .dialogue-container img#profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #888;
+}
+
+#game-container .dialogue-container #game-text {
+  color: #999fd9; /* default dialogue color */
+  font-style: italic;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* Character-specific text colors */
+.dialogue.char-lamplight #game-text { color: #636363; }
+.dialogue.char-mae       #game-text { color: #999fd9; }
+
+#game-text {
+  max-height: 600px;          /* Adjust based on container size */
+  overflow-y: auto;           /* Enables vertical scrolling */
+  padding-right: 5px;         /* Prevent text from hiding under scrollbar */
+  word-wrap: break-word;      /* Wrap long words */
+  scrollbar-width: thin;      /* Firefox: thin scrollbar */
+  scrollbar-color: #797979 transparent; /* Firefox: color */
+}
+
+/* Chrome, Edge, Safari scrollbar */
+#game-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+#game-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#game-text::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 4px;
+}
+
+/* === Fade Animations === */
+.fade-out {
+  opacity: 0;
+  filter: blur(2px);
+  transition: opacity 0.5s ease-in filter 0.5s ease-in;
+}
+
+.fade-in {
+  opacity: 1;
+  filter: none;
+  transition: opacity 0.7s ease-out;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* === Buttons === */
+button {
+  background-color: transparent;
+  border: 1px solid #555;
+  color: #d9d9d9;
+  padding: 10px 18px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+button:hover {
+  background-color: rgba(80, 0, 150, 0.2);
+  border-color: #7f00ff;
+  color: #fff;
+}
+
+/* === Red Danger Button === */
+button.red {
+  border-color: #c80000;
+  color: #ff4c4c;
+  animation: pulse 3.5s ease-in-out infinite;
+}
+
+button.red:hover {
+  background-color: rgba(200, 0, 0, 0.15);
+  border-color: #ff0000;
+  color: #fff;
+}
+
+/* === Twilight Button === */
+button.twilight {
+  border-color: #999fd9;
+  color: #999fd9;
+  pointer-events: none;
+}
+
+button.twilight:hover {
+  background-color: #0b0b0b;
+  border-color: #999fd9;
+  color: #999fd9;
+  pointer-events: none;
+}
+
+/* === Stygian Button === */
+button.stygian {
+  border-color: #c43737;
+  color: #c43737;
+  pointer-events: none;
+}
+
+button.stygian:hover {
+  background-color: #0b0b0b;
+  border-color: #c43737;
+  color: #c43737;
+  pointer-events: none;
+}
+
+/* === Abyssal Button === */
+button.abyssal {
+  border-color: #cd4e00;
+  color: #cd4e00;
+  pointer-events: none;
+}
+
+button.abyssal:hover {
+  background-color: #0b0b0b;
+  border-color: #cd4e00;
+  color: #cd4e00;
+  pointer-events: none;
+}
+
+/* === Elders Button === */
+button.elders {
+  border-color: #515151;
+  color: #515151;
+  pointer-events: none;
+}
+
+button.elders:hover {
+  background-color: #0b0b0b;
+  border-color: #515151;
+  color: #515151;
+  pointer-events: none;
+}
+
+
+
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.3);
+    border-color: #c80000;
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(255, 0, 0, 0.6);
+    border-color: #ff1a1a;
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  #dialogue-container.dialogue { padding-left: 50px; }
+  #dialogue-container.dialogue #profile-pic { width: 35px; height: 35px; }
+  #game-text { font-size: 1rem; }
+  button { font-size: 0.95rem; padding: 10px 15px; }
+}
