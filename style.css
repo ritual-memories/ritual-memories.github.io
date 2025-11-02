@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
 }
 
@@ -226,4 +226,5 @@ button.elders:hover {
   button { font-size: 0.95rem; padding: 10px 15px; }
 
 }
+
 
