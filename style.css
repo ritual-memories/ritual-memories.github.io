@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 a {
@@ -224,4 +224,5 @@ button.elders:hover {
   #dialogue-container.dialogue #profile-pic { width: 35px; height: 35px; }
   #game-text { font-size: 1rem; }
   button { font-size: 0.95rem; padding: 10px 15px; }
+
 }
